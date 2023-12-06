@@ -11,7 +11,7 @@ const cors = require('cors');
 const path = require('path');
 const profileController = require("./controllers/profileController.js");
 
-const imagesPath=path.join(path.join(__dirname,'..'),'frontend/src/images');
+// const imagesPath=path.join(path.join(__dirname,'..'),'frontend/src/images');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -23,7 +23,7 @@ Connection();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/images', express.static(imagesPath))
+app.use('/images', express.static("images"))
 
 //routes
 app.use("/auth",authController)

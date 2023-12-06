@@ -9,7 +9,7 @@ const fs = require('fs');
 const natural = require('natural');
 const tokenizer = new natural.WordTokenizer();
 
-const imagesPath=path.join(path.join(path.join(__dirname,'..'),'..'),'frontend/src/images');
+// const imagesPath=path.join(path.join(path.join(__dirname,'..'),'..'),'frontend/src/images');
 
 //get all properties which is available in our db
 propertyController.get('/getAll' ,async (req,res) => {
@@ -90,7 +90,7 @@ propertyController.get('/my',verifyToken,async(req,res)=>{
 // create property
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, imagesPath)
+        cb(null, "images")
     },
     filename: (req, file, cb) => {
         // console.log(Math.round(Math.random() * 1E9));

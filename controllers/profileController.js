@@ -18,12 +18,12 @@ profileController.get('/prof/:id',async(req,res)=>{
     }
 })
 
-const imageFolderPath=path.join(path.join(path.join(__dirname,'..'),'..'),'/frontend/src/images');
+// const imageFolderPath=path.join(path.join(path.join(__dirname,'..'),'..'),'/frontend/src/images');
 // console.log(imageFolderPath);
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, imageFolderPath)
+        cb(null, "images")
     },
     filename: (req, file, cb) => {
         // console.log(Math.round(Math.random() * 1E9));
